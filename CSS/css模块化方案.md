@@ -207,35 +207,32 @@
 
   **localIdentName**: 自定义生成类名格式，可选参数有:
 
-  - [path]: 表示样式表相对于项目根目录所在的路径
+  - path: 表示样式表相对于项目根目录所在的路径
+  - name: 表示样式表文件名称
+  - local: 表示样式表的类名定义名称
+  - hash:length: 表示 32 位的 hash 值
 
-  - [name]: 表示样式表文件名称
+  ```js
+  // JSX
+  import React from 'react';
+  import style from './index.css';
+  const Content = () => {
+    return <div className={style.title}>Content title</div>;
+  };
+  export default Content;
+  ```
 
-  - [local]: 表示样式表的类名定义名称
+  ```css
+  // css
+  .title {
+    color: #983636;
+    font-size: 40px;
+  }
+  ```
 
-  - [hash: length]: 表示32位的hash值
+  编译后
 
-    ```js
-    // JSX
-    import React from 'react';
-    import style from './index.css';
-    const Content = () => {
-      return <div className={style.title}>Content title</div>;
-    };
-    export default Content;
-    ```
-
-    ```css
-    // css
-    .title {
-      color: #983636;
-      font-size: 40px;
-    }
-    ```
-
-    编译后
-
-    [![pAezmf1.png](https://s21.ax1x.com/2024/09/09/pAezmf1.png)](https://imgse.com/i/pAezmf1)
+  [![pAezmf1.png](https://s21.ax1x.com/2024/09/09/pAezmf1.png)](https://imgse.com/i/pAezmf1)
 
   **CSS Module 作用域**
 
